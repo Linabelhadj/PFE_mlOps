@@ -2,11 +2,8 @@ from pyspark.sql import SparkSession
 
 # Create a SparkSession
 
-spark = SparkSession.builder \
-.appName("Lina") \
-.getOrCreate()
-
  
+spark =SparkSession.builder.appName('Lina').getOrCreate
 
 data_file_path = r"data_avec_mode_apresValManquantes_et_Aberrantes.csv"
 
