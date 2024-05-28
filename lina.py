@@ -18,13 +18,10 @@ df = spark.read.format("csv").option("header", "true").option("inferSchema", "tr
 
 # Show the DataFrame to verify it's loaded correctly
 
-df.show()
+df.show().toPandas()
 
-# Convertit le DataFrame en Pandas DataFrame
-df_pandas = df.toPandas()
 
-# Affiche le Pandas DataFrame
-print(df_pandas)
+
  
 
 from pyspark.sql.functions import col, explode, array, lit
