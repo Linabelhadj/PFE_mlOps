@@ -33,7 +33,7 @@ pipeline {
 
       
        
-        stage('Docker') {
+      stage('Docker') {
             steps {
                 script {
                     // Build the Docker image with Jenkins BUILD_NUMBER as the version
@@ -44,10 +44,10 @@ pipeline {
 
                     // Login to Docker Hub (Ensure Docker Hub credentials are configured in Jenkins)
                     // The 'dockerhubcredentials' should be the ID of your Docker Hub credentials stored in Jenkins
-                    sh 'docker login --username linabelhadj --password linolino123'
+                    sh 'docker login --username ceceyphoenix --password Princesseflora1'
                     
                     // Push the Docker image to Docker Hub
-                    sh 'docker push linabelhadj/pfelina:v${BUILD_NUMBER}'
+                    sh 'docker push ceceyphoenix/pfelina:v${BUILD_NUMBER}'
                     
                     // Run Docker Compose
                     sh "IMAGE_VERSION=v${BUILD_NUMBER} docker compose up -d"
