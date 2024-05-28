@@ -10,14 +10,20 @@ pipeline {
                 url: 'https://github.com/Linabelhadj/PFE_mlOps.git'
             }
         }
-       
+        
         stage('Install dependencies') {
             steps {
-                // Utilisez pip pour installer les dépendances à partir de requirements.txt
-                sh 'pip install -r requirements.txt'
+                script {
+                    try {
+                        sh 'pip install --default-timeout=100 -r requirements.txt'
+                    } catch (err) {
+                        echo "Erreur lors de l'installation des dépendances : ${err}"
+                        currentBuild.result = 'FAILURE'
+                    }
+                }
             }
         }
-        // Supposons que l'installation de dépendances Python et l'entraînement du modèle sont gérés par General.py
+        
         stage('Évaluation et Entrainement du Modèle') {
             steps {
                 script {
@@ -26,14 +32,8 @@ pipeline {
                 }
             }
         }
- 
         
-    
-        
-
-      
-       
-      stage('Docker') {
+        stage('Docker') {
             steps {
                 script {
                     // Build the Docker image with Jenkins BUILD_NUMBER as the version
