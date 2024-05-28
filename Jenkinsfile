@@ -28,7 +28,7 @@ pipeline {
             steps {
                 script {
                     // Exécutez votre script Python qui devrait gérer l'installation de dépendances
-                    sh 'randomforest.py'
+                    sh 'lina.py'
                 }
             }
         }
