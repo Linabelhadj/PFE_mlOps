@@ -3,8 +3,12 @@ from pyspark.sql import SparkSession
 # Create a SparkSession
 
  
-spark =SparkSession.builder.appName('Lina').getOrCreate
+# Création de la session Spark
+spark = SparkSession.builder \
+    .appName("Lina") \
+    .getOrCreate()
 
+# Utilisation de spark pour lire le fichier CSV
 data_file_path = r"data_avec_mode_apresValManquantes_et_Aberrantes.csv"
 
 # Load the data into a DataFrame
