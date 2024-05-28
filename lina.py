@@ -6,7 +6,7 @@ spark = SparkSession.builder \
     .getOrCreate()
 
 # Path to the CSV file
-data_file_path = r"C:\Users\SBS\Downloads\data_avec_mode_apresValManquantes_et_Aberrantes.csv"
+data_file_path = r"data_avec_mode_apresValManquantes_et_Aberrantes.csv"
 
 # Load the data into a DataFrame
 df_reader = spark.read.format("csv").option("header", "true").option("inferSchema", "true")  # Assigning the DataFrameReader to a variable
