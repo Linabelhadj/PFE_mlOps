@@ -3,7 +3,7 @@ version: '3.8'
 services:
   app:
     build: 
-      context: https://github.com/Phenix0103/PFE-.git#master  # Spécifiez le chemin GitHub vers votre projet et branche
+      context: https://github.com/Linabelhadj/PFE_mlOps.git#main  # Spécifiez le chemin GitHub vers votre projet et branche
       dockerfile: Dockerfile  # Nom du Dockerfile à utiliser pour la construction de l'image
     container_name: pfelina
     restart: always  # Redémarrez toujours le conteneur en cas de panne
