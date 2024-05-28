@@ -24,7 +24,7 @@ pipeline {
                  sh 'curl -o lina.py https://raw.githubusercontent.com/Linabelhadj/PFE_mlOps/main/lina.py'
 
                     // Exécutez votre script Python qui devrait gérer l'installation de dépendances
-                    sh 'python3 lina.py'
+                    sh 'python3 regression.py'
                 }
             }
         }
