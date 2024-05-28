@@ -5,7 +5,7 @@ services:
     build: 
       context: https://github.com/Linabelhadj/PFE_mlOps.git#main  # Spécifiez le chemin GitHub vers votre projet et branche
       dockerfile: Dockerfile  # Nom du Dockerfile à utiliser pour la construction de l'image
-    container_name: LinaPFE
+    container_name: Linapfe
     restart: always  # Redémarrez toujours le conteneur en cas de panne
     ports:
       - "8082:8082"  # Mappez le port du conteneur sur le port de l'hôte, modifiez le port selon vos besoins
