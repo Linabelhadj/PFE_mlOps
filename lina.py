@@ -18,7 +18,8 @@ df = spark.read.format("csv").option("header", "true").option("inferSchema", "tr
 
 # Show the DataFrame to verify it's loaded correctly
 
-df.show().toPandas()
+df.show()
+df.toPandas()
 
 
 
