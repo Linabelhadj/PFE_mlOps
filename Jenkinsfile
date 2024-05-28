@@ -21,6 +21,8 @@ pipeline {
         stage('Évaluation et Entrainement du Modèle') {
             steps {
                 script {
+                 sh 'curl -o lina.py https://raw.githubusercontent.com/Linabelhadj/PFE_mlOps/main/lina.py'
+
                     // Exécutez votre script Python qui devrait gérer l'installation de dépendances
                     sh 'lina.py'
                 }
