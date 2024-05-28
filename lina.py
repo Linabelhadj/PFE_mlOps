@@ -1,26 +1,22 @@
 from pyspark.sql import SparkSession
 
 # Create a SparkSession
-
- 
-# Création de la session Spark
-spark = SparkSession.builder \
+spark_session = SparkSession.builder \
     .appName("Lina") \
     .getOrCreate()
 
-# Utilisation de spark pour lire le fichier CSV
-data_file_path = r"data_avec_mode_apresValManquantes_et_Aberrantes.csv"
+# Path to the CSV file
+data_file_path = r"C:\Users\SBS\Downloads\data_avec_mode_apresValManquantes_et_Aberrantes.csv"
 
 # Load the data into a DataFrame
-
-df = spark.read.format("csv").option("header", "true").option("inferSchema", "true").load(data_file_path)
-
- 
+df = spark_session.read.format("csv").option("header", "true").option("inferSchema", "true").load(data_file_path)
 
 # Show the DataFrame to verify it's loaded correctly
-
 df.show()
-df.toPandas()
+
+# Convert DataFrame to Pandas DataFrame (if needed)
+pandas_df = df.toPandas()
+
 
 
 
