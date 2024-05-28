@@ -36,14 +36,14 @@ pipeline {
                     sh 'docker build -t kaddemimage:v${BUILD_NUMBER} -f Dockerfile ./'
                     
                     // Tagging the Docker image for Docker Hub
-                    sh 'docker tag kaddemimage:v${BUILD_NUMBER} ceceyphoenix/pfelina:v${BUILD_NUMBER}'
+                    sh 'docker tag kaddemimage:v${BUILD_NUMBER} ceceyphoenix/LinaPFE:v${BUILD_NUMBER}'
 
                     // Login to Docker Hub (Ensure Docker Hub credentials are configured in Jenkins)
                     // The 'dockerhubcredentials' should be the ID of your Docker Hub credentials stored in Jenkins
                     sh 'docker login --username ceceyphoenix --password Princesseflora1'
                     
                     // Push the Docker image to Docker Hub
-                    sh 'docker push ceceyphoenix/pfelina:v${BUILD_NUMBER}'
+                    sh 'docker push ceceyphoenix/LinaPFE:v${BUILD_NUMBER}'
                     
                     // Run Docker Compose
                     sh "IMAGE_VERSION=v${BUILD_NUMBER} docker compose up -d"
