@@ -8,7 +8,7 @@ spark = SparkSession.builder \
 
  
 
-data_file_path = r"C:\Users\SBS\Downloads\data_avec_mode_apresValManquantes_et_Aberrantes.csv"
+data_file_path = r"data_avec_mode_apresValManquantes_et_Aberrantes.csv"
 
 # Load the data into a DataFrame
 
