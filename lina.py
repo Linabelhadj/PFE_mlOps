@@ -1,7 +1,7 @@
 from pyspark.sql import SparkSession
 
 # Create a SparkSession
-spark_session = SparkSession.builder \
+spark = SparkSession.builder \
     .appName("Lina") \
     .getOrCreate()
 
@@ -9,7 +9,8 @@ spark_session = SparkSession.builder \
 data_file_path = r"C:\Users\SBS\Downloads\data_avec_mode_apresValManquantes_et_Aberrantes.csv"
 
 # Load the data into a DataFrame
-df = spark_session.read.format("csv").option("header", "true").option("inferSchema", "true").load(data_file_path)
+df_reader = spark.read.format("csv").option("header", "true").option("inferSchema", "true")  # Assigning the DataFrameReader to a variable
+df = df_reader.load(data_file_path)  # Calling the load method on the DataFrameReader
 
 # Show the DataFrame to verify it's loaded correctly
 df.show()
