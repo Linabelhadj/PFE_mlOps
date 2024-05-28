@@ -10,24 +10,23 @@ pipeline {
                 url: 'https://github.com/Linabelhadj/PFE_mlOps.git'
             }
         }
-        
-            stage('Install dependencies') {
+       
+        stage('Install dependencies') {
             steps {
                 // Utilisez pip pour installer les dépendances à partir de requirements.txt
                 sh 'pip install -r requirements.txt'
             }
         }
-        
+        // Supposons que l'installation de dépendances Python et l'entraînement du modèle sont gérés par General.py
         stage('Évaluation et Entrainement du Modèle') {
             steps {
                 script {
-                 sh 'curl -o lina.py https://raw.githubusercontent.com/Linabelhadj/PFE_mlOps/main/lina.py'
-
                     // Exécutez votre script Python qui devrait gérer l'installation de dépendances
                     sh 'python3 regression.py'
-                }
+                                }
             }
         }
+ 
         
         stage('Docker') {
             steps {
