@@ -18,11 +18,6 @@ df.show()
 # Convert DataFrame to Pandas DataFrame (if needed)
 pandas_df = df.toPandas()
 
-
-
-
- 
-
 from pyspark.sql.functions import col, explode, array, lit
 
 from pyspark.ml.feature import VectorAssembler, StandardScaler, PCA
